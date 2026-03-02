@@ -35,7 +35,7 @@ def wait_for_backend(timeout_seconds=25):
             r = requests.get(f"{BASE_URL}/")
             if r.status_code == 200:
                 return
-        except Exception as e:  
+        except Exception as e:
             last_error = e
         time.sleep(1)
     fail(f"Backend did not become ready in time (last_error={last_error})")
@@ -496,7 +496,7 @@ def main():
             print(f"[OK] {name}")
     except AssertionError as e:
         fail(str(e))
-    except Exception as e: 
+    except Exception as e:
         fail(f"Unexpected error: {e}")
 
     print("ALL AUTOTESTS PASSED (show output to your tutor)")
